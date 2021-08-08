@@ -1,2 +1,2 @@
 
-    // printf("The value of b = %f \n",*((float *)vp));
+        // printf("%d\n",i[p]);
