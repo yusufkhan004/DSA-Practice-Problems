@@ -35,9 +35,16 @@ class Cars{
 
 int main() {
 
-    Cars car1; //objects(car1) are nothing but variables of type class(Cars)
+    Cars car1,car2,car3; //objects(car1) are nothing but variables of type class(Cars)
 
     car1.setData("Toyota","altis","petrol",15.5,150000);
+    car2.setData("Tesla","model 3 plaid","None (fully electric)", 20.2,500000);
+    car3.setData("ferrari","Enzo","Diesel",35.6,3000000);
     car1.display();
+    cout << endl;
+    car2.display();
+    cout << endl;
+    car3.display();
+    
     return 0;
 }
