@@ -84,6 +84,75 @@ class singlyLinkedList{
                 cout << "Node prepended";
             }
         }
+
+        // 4. Insert Node after a particular node in the list
+
+        void insertNodeAfter(Node *n, int k){
+
+            Node* ptr = nodeExists(n -> key)
+            if(ptr == NULL){
+                cout << "No node exists with key value" << k << endl;
+            }else{
+                if(nodeExists(n-> key) == k){
+                    cout << "Node already exists with key value : " << n->key << ". Append another node with different key value";
+                }else{
+                    n -> next = ptr -> next;
+                    ptr -> next = n;
+                    cout << "Node Inserted" << endl;
+                }
+            }
+
+        }
+
+        // 5. Deleting node by unique key
+
+        void deleteNodeByKey(int k){
+            if (head == NULL){
+                cout << "Singly Linked List already Empty. Cant delete" << endl;
+            }else{
+                if(head-> key == k){
+                    head = head->next;
+                    cout << "Node Unlinked with keys value : " << k << endl;
+                }else{
+                    Node* prevptr = head;
+                    Node* currentptr = head-> next;
+                    Node* temp = NULL;
+
+                    // Finding the address of node which we have to delete
+                    while(currentptr-> next != NULL){
+                        if(currentptr -> key == k){
+                            temp = currentptr;
+                            currentptr = NULL;
+                        }else{
+                            currentptr = currentptr -> next;
+                            prevptr = currentptr -> next;
+                        }
+                    }
+                    
+                    // using address we unlink the node
+                    if(temp != NULL){
+                        prevptr -> next = temp -> next;
+                        cout << "Node unlinked with key value : " << k << endl;
+                    }else{
+                        cout << "Node doesn't Exists" << endl;
+                    }
+                }
+            }
+        }
+
+        // 6. Update Node by key
+
+        void updateNodeByKey(int k, int d){
+
+            Node* ptr = head;
+            while(ptr != NULL){
+                if (ptr->key == k){
+                    ptr -> data = d;
+                }else{
+                    ptr = ptr -> next;
+                }
+            }
+        }
 };
 
 int main() {
