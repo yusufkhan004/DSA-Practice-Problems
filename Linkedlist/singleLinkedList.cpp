@@ -144,13 +144,27 @@ class singlyLinkedList{
 
         void updateNodeByKey(int k, int d){
 
-            Node* ptr = head;
-            while(ptr != NULL){
-                if (ptr->key == k){
-                    ptr -> data = d;
-                }else{
-                    ptr = ptr -> next;
-                }
+            Node* ptr = nodeExists(k);
+            if (ptr != NULL){
+                ptr -> data = d;
+                cout << "Node data updated successfully" << endl;
+            }else{
+                cout << "Node doesn't Exists with key value : "<< k << endl;
+            }
+            }
+        }
+
+        // 7. printing the Linked lists
+
+        if(head == NULL){
+            cout << "No nodes in singly linked list" << endl;
+        }else{
+            cout << "Singly linked list values: " << endl;
+            Node* temp = head;
+
+            while(temp != NULL){
+                cout << "["<< temp-> key << "|" << temp->data << "] --> ";
+                temp = temp->next; 
             }
         }
 };
