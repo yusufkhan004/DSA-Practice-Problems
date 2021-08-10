@@ -10,7 +10,7 @@ class Node{
         Node* next;
 
         // constructors
-        Node{
+        Node(){
             key = 0;
             data = 0;
             next = NULL;
@@ -23,19 +23,19 @@ class Node{
         }
 };
 
-class singlyLinkedList{
+class SinglyLinkedList{
     public:
         Node* head;
 
-        singlyLinkedList(){
+        SinglyLinkedList(){
             head = NULL;
         }
-        singlyLinkedList(Node *n){
+        SinglyLinkedList(Node *n){
             head = n;
         }
 
         // 1. check if Node exsits using key Value
-        Node* nodeExists(k){
+        Node* nodeExists(int k){
 
             Node* temp = NULL;
             Node* ptr = head;
@@ -55,12 +55,12 @@ class singlyLinkedList{
         void appendNode(Node *n) {
 
             if(nodeExists(n -> key) != NULL){
-                cout << "Node already exists with key value : " << n->key << ". Append another node with different key value";
+                cout << "Node already exists with key value : " << n->key << ". Append another node with different key value"<< endl;
             }else{
 
                 if(head == NULL){
                     head = n;
-                    cout << "Node appended";
+                    cout << "Node appended" << endl;
                 }else{
                     Node* ptr = head;
 
@@ -69,20 +69,20 @@ class singlyLinkedList{
                     }
                     ptr -> next = n;
 
-                    cout << "Node appended";
+                    cout << "Node appended" << endl;
                 }
             }
         }
 
         // 3. prepend Node - attach a node at the start
-        void prepend(Node *n){
+        void prependNode(Node *n){
 
             if(nodeExists(n -> key) != NULL){
-                cout << "Node already exists with key value : " << n->key << ". Append another node with different key value";
+                cout << "Node already exists with key value : " << n->key << ". Append another node with different key value" << endl;
             }else{
                 n -> next = head;
                 head = n;
-                cout << "Node prepended";
+                cout << "Node prepended" << endl;
             }
         }
 
@@ -90,11 +90,11 @@ class singlyLinkedList{
 
         void insertNodeAfter(Node *n, int k){
 
-            Node* ptr = nodeExists(n -> key)
+            Node* ptr = nodeExists(k);
             if(ptr == NULL){
                 cout << "No node exists with key value" << k << endl;
             }else{
-                if(nodeExists(n-> key) == k){
+                if(nodeExists(n-> key) != NULL){
                     cout << "Node already exists with key value : " << n->key << ". Append another node with different key value";
                 }else{
                     n -> next = ptr -> next;
@@ -120,13 +120,13 @@ class singlyLinkedList{
                     Node* temp = NULL;
 
                     // Finding the address of node which we have to delete
-                    while(currentptr-> next != NULL){
+                    while(currentptr != NULL){
                         if(currentptr -> key == k){
                             temp = currentptr;
                             currentptr = NULL;
                         }else{
+                            prevptr = prevptr -> next;
                             currentptr = currentptr -> next;
-                            prevptr = currentptr -> next;
                         }
                     }
                     
@@ -135,7 +135,7 @@ class singlyLinkedList{
                         prevptr -> next = temp -> next;
                         cout << "Node unlinked with key value : " << k << endl;
                     }else{
-                        cout << "Node doesn't Exists" << endl;
+                        cout << "Node doesn't Exists with key value : " << k << endl;
                     }
                 }
             }
@@ -152,27 +152,29 @@ class singlyLinkedList{
             }else{
                 cout << "Node doesn't Exists with key value : "<< k << endl;
             }
-            }
         }
+        
 
         // 7. printing the Linked lists
+        void printList() {
+            if(head == NULL){
+                cout << "No nodes in singly linked list" << endl;
+            }else{
+                cout << "Singly linked list values: " << endl;
+                Node* temp = head;
 
-        if(head == NULL){
-            cout << "No nodes in singly linked list" << endl;
-        }else{
-            cout << "Singly linked list values: " << endl;
-            Node* temp = head;
-
-            while(temp != NULL){
-                cout << "["<< temp-> key << "|" << temp->data << "] --> ";
-                temp = temp->next; 
+                while(temp != NULL){
+                    cout << "["<< temp -> key << "|" << temp->data << "] --> ";
+                    temp = temp->next; 
+                }
             }
         }
+        
 };
 
 int main() {
 
-    singlyLinkedList s;
+    SinglyLinkedList s;
 
     int choice,key1,k1,data1;
 
@@ -185,6 +187,7 @@ int main() {
         cout << "5. updateNodeByKey()" << endl;
         cout << "6. print()" << endl;
         cout << "7. Clear Screen" << endl;
+        cout << "0. Exit" << endl;
 
         cin >> choice;
         Node* n1 = new Node();
@@ -192,15 +195,13 @@ int main() {
         switch (choice) {
             case 0: break;
             case 1: cout << "Append Node Operation \n Enter key & data of the Node to be appended" << endl;
-            cout << "Enter the key and data value pair" << endl; 
             cin >> key1;
             cin >> data1;
             n1 -> key = key1;
             n1 -> data = data1;
             s.appendNode(n1);
             break;
-            case 2: cout << "Append Node Operation \n Enter key & data of the Node to be appended" << endl;
-            cout << "Enter the key and data value pair" << endl; 
+            case 2: cout << "prepend Node Operation \n Enter key & data of the Node to be appended" << endl;
             cin >> key1;
             cin >> data1;
             n1 -> key = key1;
@@ -227,9 +228,11 @@ int main() {
             break;
             case 6 : s.printList();
             break;
+            case 7 : system("cls");
+            break;
             default : cout << "Enter Proper Option Number";
         }
-    }
+    }while(choice != 0);
 
     return 0;
 }
