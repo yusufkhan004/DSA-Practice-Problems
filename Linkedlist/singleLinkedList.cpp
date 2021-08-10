@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//user defined data type
 class Node{
 
     public:
@@ -170,6 +171,65 @@ class singlyLinkedList{
 };
 
 int main() {
+
+    singlyLinkedList s;
+
+    int choice,key1,k1,data1;
+
+    do{
+        cout << "\n What operation do you want to perform? select option number. Enter 0 to exist"<< endl;
+        cout << "1. appendNode()" << endl;
+        cout << "2. prependNode()" << endl;
+        cout << "3. insertNodeAfter()" << endl;
+        cout << "4. deleteNodeByKey()" << endl;
+        cout << "5. updateNodeByKey()" << endl;
+        cout << "6. print()" << endl;
+        cout << "7. Clear Screen" << endl;
+
+        cin >> choice;
+        Node* n1 = new Node();
+        //new keyword is used for dynamic memory allocation on heap memory and it pretty much global
+        switch (choice) {
+            case 0: break;
+            case 1: cout << "Append Node Operation \n Enter key & data of the Node to be appended" << endl;
+            cout << "Enter the key and data value pair" << endl; 
+            cin >> key1;
+            cin >> data1;
+            n1 -> key = key1;
+            n1 -> data = data1;
+            s.appendNode(n1);
+            break;
+            case 2: cout << "Append Node Operation \n Enter key & data of the Node to be appended" << endl;
+            cout << "Enter the key and data value pair" << endl; 
+            cin >> key1;
+            cin >> data1;
+            n1 -> key = key1;
+            n1 -> data = data1;
+            s.prependNode(n1);
+            break;
+            case 3 : cout << "Insert Node After the opeartion \n Enter key of existing Node after which you want to insert this New Node: "<< endl;
+            cin >> k1;
+            cout << "Enter the key and data value pair" << endl; 
+            cin >> key1;
+            cin >> data1;
+            n1-> key = key1;
+            n1-> data = data1;
+            s.insertNodeAfter(n1, k1);
+            break;
+            case 4 : cout << "Delete Node By Key Operation - \nEnter the key Node to be deleted: "<< endl;
+            cin >> k1;
+            s.deleteNodeByKey(k1);
+            break;
+            case 5 : cout << "Update Node By Key Operation - \n Enter the Key & NEW data to be Updated: " << endl;
+            cin >> k1;
+            cin >> data1;
+            s.updateNodeByKey(k1, data1);
+            break;
+            case 6 : s.printList();
+            break;
+            default : cout << "Enter Proper Option Number";
+        }
+    }
 
     return 0;
 }
