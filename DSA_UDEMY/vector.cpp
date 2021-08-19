@@ -21,8 +21,15 @@ int main(){
     // pop last element
     array.pop_back(); 
 
-    for(int i=0;i< array.size();i++){
-        cout << array[i] << " ";
+    // for(int i=0;i< array.size();i++){
+    //     cout << array[i] << " ";
+    // }
+
+    //using for each loop
+    //for each int in vector we need to print it 
+
+    for(int x: array){
+        cout << x << ",";
     }
 
     cout << endl;
