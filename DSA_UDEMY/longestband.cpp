@@ -5,27 +5,28 @@
 
 using namespace std;
 
-int largestBand(vector <int> arr){
+int largestBand(vector<int> arr){
 
-    int largestlength = 1;
     unordered_set<int> s;
+    int largestlength = 1;
 
-    //first create a lookup means duplicate array for searching operation 
-    for(auto x: arr){
+    // Data inside a set
+    for(int x: arr){
         s.insert(x);
     }
 
+    // iterate over the array
+    for(int element :s){
+        int parent = element -1;
 
-    for(auto element: s){
-        int parent = element - 1;
-
+        // if parent is not found in the arr
         if(s.find(parent)==s.end()){
-            //find entire band /chain starting from element
-            int nextElement = element + 1;
-            int count = 1;
+            // find entire band / chain starting from element
 
-            while(s.find(nextElement)!=s.end()){
-                nextElement++;
+            int next_element = element +1;
+            
+            while(s.find(next_element)!=s.end()){
+                next_element++;
                 count++;
             }
 
@@ -33,7 +34,9 @@ int largestBand(vector <int> arr){
                 largestlength = count;
             }
         }
+        // else if parent is found in array loop will continue
     }
+
     return largestlength;
 }
 
