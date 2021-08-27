@@ -22,12 +22,11 @@ int trappedwater(vector<int> heights){
     for(int i=1;i<n;i++){
         left[i] = max(left[i-1],heights[i]);
         right[n-i-1] = max(right[n-i],heights[n-i-1]);
-        cout << left[i] << " " << right[i] <<endl;
+        // cout << left[i] << " " << right[i] <<endl;
     }
 
     for(int i=0;i<n;i++){
         level +=min(left[i],right[i])-heights[i];
-        // cout << level << endl;
     }
 
 return level;
@@ -41,3 +40,5 @@ int main(){
     cout << trappedwater(water);
     return 0;
 }
+
+// 0,1,3,1,4,1,2,1,4,1,2,3,4
