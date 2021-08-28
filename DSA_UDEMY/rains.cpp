@@ -36,8 +36,8 @@ return level;
 int main(){
 
     vector<int> water = {0,1,0,2,1,0,1,3,2,1,2,1};
-    cout << "result" << endl;
-    cout << trappedwater(water);
+    int blocks = trappedwater(water);
+    cout << blocks << endl;
     return 0;
 }
 
