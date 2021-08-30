@@ -9,4 +9,5 @@ def fib(n, memo={}):
     return memo[n]
 
 
-print(fib(50))
+value = fib(50)
+print(value)
