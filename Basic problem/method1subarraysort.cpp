@@ -46,3 +46,5 @@ int main(){
     }
     return 0;
 }
+
+// Time complexity of this program will be O(nlogn) + O(n) = O(nlogn)
