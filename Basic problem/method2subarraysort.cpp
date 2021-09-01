@@ -1,12 +1,12 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
-
 using namespace std;
 
 bool outOfOrder(vector<int> arr, int i){
     int x = arr[i];
-    // Two corner case should also taken into account 
+    // Two corner case
+     also taken into account 
     //when the element is outoforder? when x > arr[i+1] and when x < arr[i-1]
         
     if(i==0){
@@ -60,10 +60,7 @@ int main() {
     vector<int> arr = {1,2,3,4,5,8,6,7,9,10,11};
 
     auto p =  subarraySort(arr);
-
     cout << p.first << " and " << p.second << endl; 
-
-
     return 0;
 }
 
