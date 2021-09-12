@@ -34,6 +34,7 @@ public:
         cin >> n1;
     }
 
+ 
     void printA(void)
     {
         cout << "value of class A " << n1 << endl;
