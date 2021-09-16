@@ -14,12 +14,12 @@ int main() {
     menu["soft_drink"] = 30;
     menu["dosa"] = 99;
 
-    //update query O(1)
+    //updating query O(1)
     menu["dosa"] = menu["dosa"]*(1 + 0.1);
 
     menu.erase("maggi");
 
-    //search
+    //searching 
     string item;
     cin >> item;
 
