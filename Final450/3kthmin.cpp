@@ -4,35 +4,39 @@
 // K = 3
 // Output : 7
 // Explanation :
-// 3rd smallest element in the given 
+// 3rd smallest element in the given
 // array is 7.
 
-#include<iostream>
-#include<unordered_set>
-#include<vector>
+#include <iostream>
+#include <unordered_set>
+#include <vector>
 using namespace std;
 
-void kthsmallestnumber(int arr[]){
+void kthsmallestnumber(int arr[], int n)
+{
 
-    unordered_set<int> a;
+    vector<int> a;
 
-    // int n = sizeof(arr)/sizeof(arr[0])
-
-    for(int x : arr){
-        a.insert(x);
-    }
-    
-    for(int x:a){
-        cout << x <<" ";
+    for (int i = 0; i < n; i++)
+    {
+        a.push_back(arr[i]);
     }
 
+    sort(a.begin() == end());
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i];
+    }
 }
 
-int main(){
+int main()
+{
 
-    int arr[] = {7,10,4,3,20,15};
+    int arr[] = {7, 10, 4, 3, 20, 15};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    kthsmallestnumber(arr);
+    kthsmallestnumber(arr, n);
 
     return 0;
 }

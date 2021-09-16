@@ -1,3 +1,7 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+
 int trappedwater(vector<int> heights){
 
     //exceptional case when n(width) is less than 2 then return 0
