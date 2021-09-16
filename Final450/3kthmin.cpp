@@ -9,34 +9,42 @@
 
 #include <iostream>
 #include <unordered_set>
+#include <algorithm>
 #include <vector>
 using namespace std;
 
-void kthsmallestnumber(int arr[], int n)
+class Kthele
 {
-
-    vector<int> a;
-
-    for (int i = 0; i < n; i++)
+public:
+    void kthsmallestnumber(int arr[], int n, int k)
     {
-        a.push_back(arr[i]);
-    }
+        vector<int> a;
+        for (int i = 0; i < n; i++)
+        {
+            a.push_back(arr[i]);
+        }
+        sort(a.begin(), a.end());
+        cout << a[k + 1];
 
-    sort(a.begin() == end());
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << a[i];
+        // for (int i = 0; i < n; i++)
+        // {
+        //     cout << a[i];
+        // }
     }
-}
+};
 
 int main()
 {
 
     int arr[] = {7, 10, 4, 3, 20, 15};
     int n = sizeof(arr) / sizeof(arr[0]);
+    int k;
+    cout << "Enter the Kth element" << endl;
+    cin >> k;
 
-    kthsmallestnumber(arr, n);
+    Kthele obj;
+
+    obj.kthsmallestnumber(arr, n, k);
 
     return 0;
 }
