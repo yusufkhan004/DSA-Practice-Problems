@@ -11,7 +11,7 @@ public:
         int n = arr.size();
         pair<int, int> ar[n];
 
-        // store the values of arr with the indices using pair
+        // store the values of arr with  indices using pair
         for (int i = 0; i < arr.size(); i++)
         {
             ar[i].first = arr[i];
