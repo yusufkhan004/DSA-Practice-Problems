@@ -17,6 +17,7 @@ int main()
 
     int n;
     int count = 0;
+    cout << "Enter the number : " << endl;
     cin >> n;
     cout << "Binary representation of " << n << endl;
 
@@ -32,8 +33,11 @@ int main()
     cout << "Number of 1's" << endl;
     while (num != 0)
     {
+        cout << num << " and " << (num - 1) << " is " << (num & num - 1) << endl;
         num = num & num - 1;
         count++;
     }
     cout << (count);
+    // int y = 4 & 3;
+    // cout << y;
 }
