@@ -27,12 +27,16 @@ public:
 
         // find position of B in A and check if position is -1 or not
         // and iteratively append s into A and check whether len of A is <= B+temp
-        while (A.find(B) == string::npos && A.length() <= B.length() + temp.length())
+        while (A.find(B) == string::npos &&)
         {
             A.append(temp);
             repeat++;
         }
 
+        // string:npos constant is defined with a value of -1, because size_t is an
+        // unsigned integral type, and -1 is the largest possible representable value
+        //  for this type.
+        
         // if string is found return count value
         if (A.find(B) != string::npos)
         {
