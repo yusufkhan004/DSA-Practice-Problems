@@ -15,7 +15,7 @@ int main()
         num = n;
         int count = 0;
         while (num != 0)
-        {   
+        {
             // cout << num << " and " << (num - 1) << " is " << (num & num - 1) << endl;
             num = num & num - 1;
             count++;

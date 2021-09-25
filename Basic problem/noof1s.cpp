@@ -29,15 +29,15 @@ int main()
         n = n / 2;
     }
 
-    cout << endl;
-    cout << "Number of 1's" << endl;
-    while (num != 0)
-    {
-        cout << num << " and " << (num - 1) << " is " << (num & num - 1) << endl;
-        num = num & num - 1;
-        count++;
-    }
-    cout << (count);
+    // cout << endl;
+    // cout << "Number of 1's" << endl;
+    // while (num != 0)
+    // {
+    //     cout << num << " and " << (num - 1) << " is " << (num & num - 1) << endl;
+    //     num = num & num - 1;
+    //     count++;
+    // }
+    // cout << (count);
     // int y = 4 & 3;
     // cout << y;
 }
