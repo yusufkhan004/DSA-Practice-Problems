@@ -1,58 +1,35 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
+vector<int> largest(int n)
+{
+
+    vector<int> arr;
+    vector<int> values;
+    int temp = n;
+    while (temp != 0)
+    {
+        int d = temp % 10;
+        arr.push_back(d);
+        temp = temp / 10;
+    }
+    sort(arr.begin(), arr.end());
+    values.push_back(*(arr.end() - 1));
+    values.push_back(*(arr.end() - 2));
+
+    return values;
+}
 int main()
 {
     int f, s, t;
     vector<int> v, v1, v2;
     cin >> f >> s >> t;
 
-    while (f != 0)
-    {
-        int n = f % 10;
-        v.push_back(n);
-        f = f / 10;
-    }
-    sort(v.begin(), v.end());
-    int l1 = v.size();
+    v = largest(f);
+    v1 = largest(s);
+    v2 = largest(t);
 
-    while (s != 0)
-    {
-        int n1 = s % 10;
-        v1.push_back(n1);
-        s = s / 10;
-    }
-    sort(v1.begin(), v1.end());
-    int l2 = v1.size();
-
-    while (t != 0)
-    {
-        int n2 = t % 10;
-        v2.push_back(n2);
-        t = t / 10;
-    }
-    sort(v2.begin(), v2.end());
-    int l3 = v2.size();
-
-    int d = v[l1] + v1[l2] + v2[l3];
-    int d1 = v[l1 - 1] + v1[l2 - 1] + v2[l3 - 1];
-
-    int ans = d - d1;
-    
-    // for (int i : v)
-    // {
-    //     cout << i << " ";
-    // }
-    // for (int i : v1)
-    // {
-    //     cout << i << " ";
-    // }
-    // for (int i : v2)
-    // {
-    //     cout << i << " ";
-    // }
-    cout << ans;
+    int op = (v[0] + v1[0] + v2[0]) - (v[1] + v1[1] + v2[1]);
+    cout << op;
     return 0;
 }
