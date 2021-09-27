@@ -2,65 +2,24 @@
 
 using namespace std;
 
-// int main()
-// {
-
-//     vector<int> numbers;
-//     vector<int> first;
-//     vector<int> second;
-//     int n, x;
-//     cin >> n;
-//     for (int i = 0; i < n; i++)
-//     {
-//         cin >> x;
-//         numbers[i] = x;
-//     }
-
-//     for (int j = 0; j < n; j++)
-//     {
-//         int y = numbers[j];
-//         for (int i = 2; i <= y - 1; i++)
-//         {
-//             if (y % i != 0)
-//             {
-//                 cout << "yes";
-//                 first.push_back(y);
-//                 break;
-//             }
-//             else
-//             {
-//                 second.push_back(y);
-//                 break;
-//             }
-//         }
-//     }
-
-//     for (int i : first)
-//     {
-//         cout << i << " ";
-//     }
-
-//     for (int i : second)
-//     {
-//         cout << i << " ";
-//     }
-
-//     return 0;
-// }
-
-bool isElementPrime(int value)
+bool isElementPrime(int n)
 {
-    for (int i = 2; i < ((value / 2) + 1); i++)
+    if (n == 0 || n == 1)
     {
-        if (value % i == 0)
+        return false;
+    }
+    else
+    {
+        for (int i = 2; i <= n / 2; ++i)
         {
-            return false;
-        }
-        else
-        {
-            return true;
+            if (n % i == 0)
+            {
+                return false;
+                break;
+            }
         }
     }
+    return true;
 }
 
 int main()
@@ -71,23 +30,25 @@ int main()
     {
         if (isElementPrime(values[i]))
         {
-            first.push_back(values[i]);
+            // first.push_back(values[i]);
+            cout << "prime";
         }
         else
         {
-            second.push_back(values[i]);
+            // second.push_back(values[i]);
+            cout << "No prime";
         }
     }
 
-    for (int i : second)
-    {
-        first.push_back(i);
-    }
+    // for (int i : second)
+    // {
+    //     first.push_back(i);
+    // }
 
-    for (int i : first)
-    {
-        cout << i << " ";
-    }
+    // for (int i : first)
+    // {
+    //     cout << i << " ";
+    // }
 
     // for (int i : second)
     // {
