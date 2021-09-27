@@ -17,7 +17,7 @@ int main()
     range[9] = 'j';
 
     // 16543
-    int num = 16543;
+    int num = 12403;
     int len = 0;
     while (num != 0)
     {
