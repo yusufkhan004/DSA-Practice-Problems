@@ -4,43 +4,51 @@ using namespace std;
 
 int main()
 {
-    int num = 43251;
-    int key = 3;
+    // int num = 43251;
+    // int key = 3;
 
-    vector<int> arr;
+    // vector<int> arr;
 
-    while (num != 0)
+    // while (num != 0)
+    // {
+    //     int rem = num % 10;
+    //     arr.push_back(rem);
+    //     num = num / 10;
+    // }
+
+    // reverse(arr.begin(), arr.end());
+
+    // for (int i : arr)
+    // {
+    //     cout << i << "";
+    // }
+    // return 0;
+
+    // int len = arr.size();
+
+    // for (int i = 0; i < key; i++)
+    // {
+    //     if (i % 2 == 0)
+    //     {
+    //         swap(arr[len % i], arr[len % (i + 2)]);
+    //     }
+    //     else
+    //     {
+    //         swap(arr[len % i], arr[len % (i + 2)]);
+    //     }
+    // }
+
+    // for (int i : arr)
+    // {
+    //     cout << i << "";
+    // }
+
+    char arr[4] = "123";
+
+    for (int i = 0; i < '\0'; i++)
     {
-        int rem = num % 10;
-        arr.push_back(rem);
-        num = num / 10;
+        cout << arr[i];
     }
 
-    reverse(arr.begin(), arr.end());
-
-    for (int i : arr)
-    {
-        cout << i << "";
-    }
-    return 0;
-
-    int len = arr.size();
-
-    for (int i = 0; i < key; i++)
-    {
-        if (i % 2 == 0)
-        {
-            swap(arr[len % i], arr[len % (i + 2)]);
-        }
-        else
-        {
-            swap(arr[len % i], arr[len % (i + 2)]);
-        }
-    }
-
-    for (int i : arr)
-    {
-        cout << i << "";
-    }
     return 0;
 }
