@@ -3,7 +3,6 @@ using namespace std;
 
 int main()
 {
-
     int row, column, temp;
     cin >> row >> column;
     vector<vector<int>> matrix;
@@ -18,15 +17,6 @@ int main()
         matrix.push_back(temparr);
         temparr.clear();
     }
-
-    // for (auto i : matrix)
-    // {
-    //     for (auto j : i)
-    //     {
-    //         cout << j << " ";
-    //     }
-    // }
-
     // 1 0 1 0 0
     // 1 0 1 1 0
     // 1 1 1 1 1
@@ -69,7 +59,6 @@ int main()
             }
         }
     }
-
     cout << "maximum number of square can be formed is " << ans << endl;
     cout << "Maximum no. of boxes having 1 is " << ans * ans << endl;
     return 0;
