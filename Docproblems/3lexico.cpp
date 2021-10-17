@@ -3,9 +3,9 @@ using namespace std;
 
 
 
-string lexicographic(sting word){
+// string lexicographic(string word){
     
-}
+// }
 int main()
 {
 
@@ -46,7 +46,7 @@ int main()
     if (absize == ab && basize == ba)
     {
         cout << "Possible" << endl;
-        cout << lexicographic(word);
+        // cout << lexicographic(word);
     }
     else
     {

@@ -1,8 +1,20 @@
-//find function
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
+vector<int> findfunction(string paragraph, string word)
+{
+    vector<int> str;
+    // size_t index = paragraph.find(word);
+    int index = paragraph.find(word);
+    while (index != -1)
+    {
+        str.push_back(index);
+        index = paragraph.find(word, index + 1);
+    }
+
+    return str;
+}
 int main()
 {
     // a paragraph
@@ -11,24 +23,12 @@ int main()
     string word;
     getline(cin, word);
 
-    // find function
-    size_t index = paragraph.find(word);
+    auto p = findfunction(paragraph, word);
 
-    if (index == -1)
+    for (auto i : p)
     {
-        cout << "string not found";
+        cout << i << " ";
     }
 
-    if (index != -1)
-    {
-        cout << "First occ." << index << endl;
-    }
-
-    index = paragraph.find(word, index + 1);
-
-    if (index != -1)
-    {
-        cout << "second occ." << index << endl;
-    }
     return 0;
 }
