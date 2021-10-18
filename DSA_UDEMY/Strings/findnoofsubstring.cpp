@@ -4,22 +4,29 @@ using namespace std;
 
 int main()
 {
-    int index = 0;
     string bigstring = "I liked the movie, acting in movie was great.";
-    string smallstring = "movie";
+    string smallstring = "zayn";
     vector<int> arr;
 
-    while (index < bigstring.length())
+    auto index = bigstring.find(smallstring);
+    // while (index != -1)
+    // {
+    //     arr.push_back(index);
+    //     index = bigstring.find(smallstring, index + 1);
+    // }
+    if (index == -1)
     {
-        index = bigstring.find(smallstring);
-        arr.push_back(index);
-        index = bigstring.find(smallstring, index + 1);
+        cout << "Not found";
+    }
+    else
+    {
+        cout << "found";
     }
 
-    for (int i : arr)
-    {
-        cout << arr[i] << ",";
-    }
+    // for (int i : arr)
+    // {
+    //     cout << i << ",";
+    // }
 
     return 0;
 }

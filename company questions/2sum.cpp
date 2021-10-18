@@ -4,7 +4,6 @@ using namespace std;
 
 int main()
 {
-
     vector<int> arr;
     int n;
     cin >> n;
@@ -30,7 +29,6 @@ int main()
             }
         }
     }
-
     cout << "count = " << count << endl;
 
     return 0;
