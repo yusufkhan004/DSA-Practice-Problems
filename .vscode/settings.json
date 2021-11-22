@@ -1,14 +1,18 @@
 {
-    "files.associations": {
-        "*.js": "javascriptreact",
-        "iostream": "cpp",
-        "*.tcc": "cpp",
-        "deque": "cpp",
-        "list": "cpp",
-        "string": "cpp",
-        "unordered_map": "cpp",
-        "unordered_set": "cpp",
-        "vector": "cpp"
+    "workbench.colorCustomizations": {
+        "sash.hoverBorder": "#fff5ab",
+        "statusBar.background": "#ffef78",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#ffe945",
+        "statusBarItem.remoteBackground": "#ffef78",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#ffef78",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#ffef7899",
+        "titleBar.inactiveForeground": "#15202b99"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "peacock.color": "#FFEF78",
+    "files.associations": {
+        "*.tcc": "cpp"
+    }
 }

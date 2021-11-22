@@ -4,7 +4,8 @@ using namespace std;
 
 int main() {
 
-    int fact = 1,i,n;
+    int fact = 1;
+    int n;
 
     cout << "Enter the number of factorial.:" << endl;
     cin >> n;
