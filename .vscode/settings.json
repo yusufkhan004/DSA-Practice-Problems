@@ -14,5 +14,6 @@
     "peacock.color": "#FFEF78",
     "files.associations": {
         "*.tcc": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
